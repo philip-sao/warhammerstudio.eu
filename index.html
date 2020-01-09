@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>WarhammerStudio</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style.index.css">
+	<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+</head>
+
+<body>
+
+	<div class="bImage">
+		<h1>Eltharons Warhammer Studio</h1>
+
+		<p style="font-size:1rem;">This page contains battle videos from two styles of miniature battles: Warhammer - Age of Sigmar and Warhammer Fantasy 8th edition. <br>Choose below which battle style you prefer. 
+		</p>
+			
+		<div id="radios" class="boxed">
+			<input type="radio" id="aos" name="battleForm" value="Age of Sigmar">
+			<label for="aos">Age of Sigmar</label>
+
+			<input type="radio" id="f8th" name="battleForm" value="Warhammer Fantasy 8th">
+			<label for="f8th">Warhammer Fantasy 8th</label>
+		</div>
+
+		<div id="aosFeed" class="style fade-in">
+			<div id="feed" class="style fade-in">
+				<h2>Beastmen VS Khorne-Sylvaneth</h2>
+				<h3>2000 points (2 vs 1) pitched battle</h3>
+				<iframe id="video" src="https://www.youtube.com/embed/aq73sZPq2-Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<p id="date">15th December 2019</p>
+			</div>
+			<div id="feed" class="style fade-in">
+				<h2>Skaven VS Daemons of Khorne</h2>
+				<h3>750 points pitched battle</h3>
+				<iframe id="video" src="https://www.youtube.com/embed/xd5b5dQOUjk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<p id="date">2nd November 2019</p>
+			</div>
+			<div id="feed" class="style fade-in">
+				<h2>Beastmen VS Daemons of Khorne</h2>
+				<h3>750 points pitched battle</h3>
+				<iframe id="video" src="https://www.youtube.com/embed/nqVes4EnGWM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<p id="date">27th October 2019</p>
+			</div>
+			<div id="feed" class="style fade-in">
+				<h2>Skaven VS Stormcast Eternals</h2>
+				<h3>750 points pitched battle</h3>
+				<iframe id="video" src="https://www.youtube.com/embed/wwInluOrn0E" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<p id="date">6th October 2019</p>
+			</div>
+		</div>
+
+
+		<div id="whfFeed" class="style fade-in">
+			<div id="feed" class="style fade-in">
+				<h2>Lizarmen VS Beastmen</h2>
+				<h3>2000 points fantasy 8th edition</h3>
+				<iframe id="video" src="https://www.youtube.com/embed/VAe8sfIciZM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div id="feed" class="style fade-in">
+				<h2>High Elves VS Dwarves</h2>
+				<h3>1200 points fantasy 8th edition</h3>
+				<iframe id="video" src="https://www.youtube.com/embed/t8wPX6vPCco" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div id="feed" class="style fade-in">
+				<h2>Daemons of Chaos VS Ogre Kingdom</h2>
+				<h3>1600 points fantasy 8th edition</h3>
+				<iframe id="video" src="https://www.youtube.com/embed/Zo7Uf-yaLFY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+			<div id="feed" class="style fade-in">
+				<h2>High Elves VS Wood Elves</h2>
+				<h3>1200 points fantasy 8th edition</h3>
+				<iframe id="video" src="https://www.youtube.com/embed/9Dv5pZ0Ronc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+						<div id="feed" class="style fade-in">
+				<h2>Lizardmen VS High Elves</h2>
+				<h3>1000 points fantasy 8th edition</h3>
+				<iframe id="video" src="https://www.youtube.com/embed/6CoHWXI5qsI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+						<div id="feed" class="style fade-in">
+				<h2>Bretonnia VS Beastmen</h2>
+				<h3>1600 points fantasy 8th edition</h3>
+				<iframe id="video" src="https://www.youtube.com/embed/U_p_a9U0tng" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>
+
+<script>
+
+	var aosVideos = ["https://www.youtube.com/embed/wwInluOrn0E", "https://www.youtube.com/embed/nqVes4EnGWM", "https://www.youtube.com/embed/xd5b5dQOUjk", "https://www.youtube.com/embed/aq73sZPq2-Q"];
+
+	$(document).ready(function() {
+
+		$('#whfFeed').hide();
+
+		$("input:radio:first").attr('checked', true);
+
+		$("input[type='radio']").click(function(){
+
+            var radioValue = $("input[name='battleForm']:checked").val();
+            if(radioValue == "Age of Sigmar") {
+            	$('#aosFeed').show();
+            	$('#whfFeed').hide();
+            	$('.bImage').css("background-image", "url(./images/IMG_BELAKOR.jpg)");
+            } else if (radioValue == "Warhammer Fantasy 8th") {
+            	$('#aosFeed').hide();
+            	$('#whfFeed').show();
+            	$('.bImage').css("background-image", "url(./images/IMG_BLOODTH.jpg)");
+            }
+        });
+		
+	});
+
+</script>
