@@ -8,7 +8,7 @@ html, body {
 }
 
 h1,h2,h3 {
-	color: #742525;
+	color: #742601;
 	animation: fadeIn ease 5s;
 	font-size: 1rem;
 }
@@ -21,14 +21,14 @@ h1 {
 }
 
 p {
-	color: #742525;
+	color: #742601;
 	animation: fadeIn ease 5s;
 	text-align: center;
 	font-weight: bold;
 }
 
 #date {
-	color: #742525;
+	color: #742601;
 	text-align-last: left;
 	font-size: 0.9rem;
 	font-style: italic;
@@ -53,6 +53,7 @@ p {
 
 	text-align: center;
 	margin: 0 auto;
+  margin: 20px 0px 40px;
 }
 .boxed label {
   display: inline-block;
